@@ -1,0 +1,28 @@
+{
+  "name": "react-journey",
+  "version": "1.0.0",
+  "description": "React learning journey",
+  "scripts": {
+    "start": "parcel index.html",
+    "build" : "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surya98901/React-journey.git"
+  },
+  "author": "surya yedlapally",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surya98901/React-journey/issues"
+  },
+  "homepage": "https://github.com/surya98901/React-journey#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
