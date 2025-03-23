@@ -1,5 +1,6 @@
-import { CDN_URL } from "../utils/constants";
-import { useState,useEffect } from "react";
+import { CDN_URL, RESTAURANT_URL } from "../utils/constants";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Shimmer } from "./Shimmer";
 
 const ResCard = (props) => {
@@ -17,6 +18,7 @@ const ResCard = (props) => {
     </div>
   );
 };
+
 const ResContainer = () => {
   const [resList1, setresList1] = useState([]);
   const [filresList1, setfilresList1] = useState([]);
@@ -25,11 +27,9 @@ const ResContainer = () => {
   useEffect(() => {
     fetchinfo();
   }, []);
-
+  console.log(resList1);
   const fetchinfo = async () => {
-    const info = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const info = await fetch(RESTAURANT_URL);
     const json = await info.json();
     setresList1(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -80,7 +80,7 @@ const ResContainer = () => {
       </div>
       <div className="res-container">
         {filresList1.map((res) => (
-          <ResCard key={res.info.id} resData={res} />
+          <Link to= {"/menu/" + res.info.id}  key={res.info.id}><ResCard  resData={res} /></Link>
         ))}
       </div>
     </div>

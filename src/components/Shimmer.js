@@ -9,6 +9,14 @@ export const Shimmer = ()=> {
             <div className="shimmercard"></div>
             <div className="shimmercard"></div>
             <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
+            <div className="shimmercard"></div>
         </div>
     )
 }
