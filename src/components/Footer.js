@@ -1,8 +1,7 @@
-
 const Footer = () => {
     return (
         <footer>
-            <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Grub Express. All rights reserved.</p>
         </footer>
     );
 };
