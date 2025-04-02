@@ -6,7 +6,7 @@ import {Contact} from "./components/Contact";
 import { Error } from "./components/Error";
 import ResContainer from "./components/ResContainer";
 import Footer from "./components/footer";
-import ResMenu from "./components/ResMenu";
+import Restaurent from "./components/Restaurent";
 import { createBrowserRouter, RouterProvider,Outlet} from "react-router-dom";
 import { Shimmer } from "./components/Shimmer";
 
@@ -44,7 +44,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/menu/:resid",
-        element: <ResMenu />,
+        element: <Restaurent />,
         errorElement: <Error />,
       },
       {
