@@ -22,7 +22,7 @@ const ResCard = (props) => {
     </div>
   );
 };
-
+// higher order component-> to add label to the ResCard component
 export const withLable = (Rescard) => {
   return (props) => {
     const { resData } = props;

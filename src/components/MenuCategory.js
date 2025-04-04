@@ -1,16 +1,16 @@
 import ItemCard from "./ItemCard";
-import { useState } from "react";
+
 
 const MenuCategory = (props) => {
-    const [showItems, setShowItems] = useState(false);
-  const { data } = props;
+
+  const { data, showItems , setindexState } = props;
   const { title } = data.card.card;
   const itemCards = data.card.card.itemCards;
 
   return (
     <div
       className="w-full bg-green-100"
-      onClick={() => setShowItems(!showItems)}
+      onClick={() => setindexState()} // Toggle showItems state
     >
       <div className=" bg-white mb-2 rounded-lg shadow-lg" >
         <div className=" flex justify-between  cursor-pointer hover:shadow-2xl transition-all duration-300 ease-in-out">
