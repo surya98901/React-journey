@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/CartSlice";
+
+
+
+
 const ItemCard = (props) => {
+
+  const dispatch = useDispatch();
+  const addItemToCart = (item) => {
+    dispatch(addItem(item));
+  }
   const { items } = props;
   const { name, imageId, itemAttribute, ratings, description } =
     items.card.info;
   console.log(items.card.info);
+
+  const [btnCount, SetbtnCount] = useState(0);
 
   return (
     <div
@@ -29,15 +43,31 @@ const ItemCard = (props) => {
           {description}
         </h2>
       </div>
-      <div className="w-2/10 mx-4 my-4">
+      <div className="relative w-2/10 mx-4 my-4">
         <img
-          className=" relative w-2/2  rounded-2xl object-cover shadow-lg "
+          className="w-2/2 rounded-2xl object-cover shadow-lg"
           src={CDN_URL + imageId}
         ></img>
-        <button className=" absolute border-2 border-green-700 bg-white rounded-lg text-sm p-1 mouser-pointer-hover:scale-105">
-          {" "}
-          Add +
-        </button>
+        <div className="absolute flex justify-between w-1/2 border-2 border-lime-600 rounded-lg bg-white bottom-1 left-1/2 transform -translate-x-1/2">
+          <button
+            className="w-2/5 border-2 font-bold bg-green-700 text-white rounded-lg text-xl p-1"
+            onClick={() => {
+              SetbtnCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0)); // Decrement safely
+            }}
+          >
+            -
+          </button>
+          <h2 className="text-xl mt-1">{btnCount}</h2>
+          <button
+            className="w-2/5 border-2 font-bold bg-green-700 text-white rounded-lg text-xl p-1"
+            onClick={() => {
+              SetbtnCount((prevCount) => prevCount + 1); // Increment safely
+              addItemToCart(items.card.info); // Add item to cart
+            }}
+          >
+            +
+          </button>
+        </div>
       </div>
     </div>
   );
