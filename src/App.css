@@ -1,0 +1,24 @@
+html, body {
+    height: 100%; /* Ensure the body takes the full height of the viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure the root container takes the full height */
+}
+
+header, main, footer {
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+main {
+    flex-grow: 1; /* Allow the main content to grow and fill available space */
+}
+
+footer {
+    flex-shrink: 0; /* Footer stays at the bottom */
+}

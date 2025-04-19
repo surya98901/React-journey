@@ -5,7 +5,7 @@ import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Error } from "./components/Error";
 import ResContainer from "./components/ResContainer";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Restaurent from "./components/Restaurent";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Shimmer } from "./components/Shimmer";

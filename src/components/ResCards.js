@@ -1,9 +1,12 @@
 import { CDN_URL } from "../utils/constants";
+
+
 const ResCard = (props) => {
+  
   const { resData } = props;
   const { name, cloudinaryImageId, cuisines, avgRating, sla } = resData?.info;
   return (
-    <div className="w-80 h-80 shadow-lg p-4 m-4 flex flex-col hover:shadow-2xl rounded-2xl">
+    <div data-testid="ResCard" className="w-80 h-80 shadow-lg p-4 m-4 flex flex-col hover:shadow-2xl rounded-2xl">
       <img
         className="h-3/4 w-2/2 rounded-2xl object-cover shadow-lg "
         src={CDN_URL + cloudinaryImageId}

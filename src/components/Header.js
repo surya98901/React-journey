@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { LOGO_URL, Header } from "../utils/constants";
+import { LOGO_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
 import { useSelector} from "react-redux";
 
@@ -14,7 +14,7 @@ export const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="header flex justify-between shadow-lg mb-2">
+    <div className=" flex justify-between shadow-lg mb-2">
       <div className="logo w-4/10 mx-auto flex" >
         <img className="w-30 h-30" src={LOGO_URL}></img>
         <h1 className="absolute py-5 m-6 px-20 font-bold text-2xl text-lime-700 ">Grub Express</h1>
@@ -52,4 +52,5 @@ export const Header = () => {
     </div>
   );
 };
+
 export default Header;
